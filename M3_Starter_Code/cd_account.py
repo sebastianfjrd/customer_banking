@@ -1,7 +1,7 @@
 """Import the Account class from the Account.py file."""
 # ADD YOUR CODE HERE
-from Account import CD
-def create_cd_account(cd_balance, interest_rate, months):
+from Account import Account
+def create_cd_account(balance, interest_rate, months):
     """Creates a CD account, calculates interest earned, and updates the account balance.
 
     Args:
@@ -14,18 +14,19 @@ def create_cd_account(cd_balance, interest_rate, months):
         And returns the interest earned.
     """
     # Create an instance of the `Account`   and pass in the balance and interest parameters.
-    cd_account = CD(cd_balance, interest_rate, months)
+    cd_account = Account(balance, 0)
     #  Hint: You need to add the interest as a value, i.e, 0.
     # ADD YOUR CODE HERE
+    
 
     # Calculate interest earned
     # ADD YOUR CODE HERE
     
-    interest_earned = cd_balance * (interest_rate / 100) * (months / 12)
+    interest_earned = balance * (interest_rate / 100) * (months / 12)
 
     # Update the CD account balance by adding the interest earned
     # ADD YOUR CODE HERE
-    updated_balance = cd_balance + interest_earned
+    updated_balance = balance + interest_earned
     # Pass the updated_balance to the set balance method using the instance of the CDAccount class.
     # ADD YOUR CODE HERE
     cd_account.set_balance(updated_balance)
@@ -36,12 +37,12 @@ def create_cd_account(cd_balance, interest_rate, months):
     # Return the updated balance and interest earned.
     # ADD YOUR CODE HERE
     return updated_balance, interest_earned
-if __name__ == "__main__":
-    cd_balance = float(input("Enter the CD balance: 50000"))
-    interest_rate = float(input("Enter the interest rate for the CD: 0.7"))
-    months = int(input("Enter the length of the CD in months: 6"))
+# if __name__ == "__main__":
+#     cd_balance = float(input("Enter the CD balance: "))
+#     interest_rate = float(input("Enter the interest rate for the CD: "))
+#     months = int(input("Enter the length of the CD in months: "))
     
-    updated_balance, interest_earned = create_cd_account(cd_balance, interest_rate, months)
+#     updated_balance, interest_earned = create_cd_account(balance, interest_rate, months)
     
-    print(f"Updated CD account balance: {updated_balance}")
-    print(f"Interest earned: {interest_earned}")
+#     print(f"Updated CD account balance: {updated_balance}")
+#     print(f"Interest earned: {interest_earned}")
